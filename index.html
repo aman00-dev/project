@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aman - Personal Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .skill-bar {
+            transition: width 2s ease-in-out;
+        }
+
+        .project-image {
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+
+        .friend-card {
+            transition: all 0.3s ease;
+        }
+
+        .friend-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .social-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.2);
+        }
+
+        .typewriter {
+            overflow: hidden;
+            border-right: 3px solid white;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
+        }
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: white
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">A</span>
+                    </div>
+                    <span class="ml-3 text-lg sm:text-xl font-bold text-gray-800">Amanda's Portfolio</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-6 lg:space-x-8">
+                    <a href="#home" class="text-gray-600 hover:text-blue-600 font-medium">Home</a>
+                    <a href="#about" class="text-gray-600 hover:text-blue-600 font-medium">About</a>
+                    <a href="#projects" class="text-gray-600 hover:text-blue-600 font-medium">Projects</a>
+                    <a href="#friends" class="text-gray-600 hover:text-blue-600 font-medium">Friends</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-600 font-medium">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-gray-600">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                <!-- Mobile Menu (hidden by default) -->
+                <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+                    <div class="flex flex-col space-y-2 py-4 px-6">
+                        <a href="#home" class="text-gray-600 hover:text-blue-600 font-medium">Home</a>
+                        <a href="#about" class="text-gray-600 hover:text-blue-600 font-medium">About</a>
+                        <a href="#projects" class="text-gray-600 hover:text-blue-600 font-medium">Projects</a>
+                        <a href="#friends" class="text-gray-600 hover:text-blue-600 font-medium">Friends</a>
+                        <a href="#contact" class="text-gray-600 hover:text-blue-600 font-medium">Contact</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient min-h-screen flex items-center pt-28 pb-12">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex flex-col md:flex-row items-center">
+
+                <!-- Text Content -->
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <div
+                        class="bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-6 sm:p-8 shadow-xl text-center md:text-left">
+                        <h1
+                            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight break-words">
+                            Hi, I'm <span class="text-yellow-300">Aman</span>
+                        </h1>
+                        <h2
+                            class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white mb-6 typewriter leading-snug break-words">
+                            DevOps Engineer & Cloud Specialist
+                        </h2>
+                        <p class="text-white text-base sm:text-lg mb-8 leading-relaxed break-words">
+                            Passionate about building scalable cloud infrastructure and automating deployment processes.
+                            I love working with AWS, Kubernetes, Docker, and modern DevOps technologies.
+                        </p>
+                        <div
+                            class="flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0 justify-center md:justify-start">
+                            <a href="#projects"
+                                class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                                View My Work
+                            </a>
+                            <a href="#contact"
+                                class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                                Contact Me
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Content -->
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div
+                            class="w-56 sm:w-64 md:w-72 lg:w-80 h-56 sm:h-64 md:h-72 lg:h-80 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                            <div
+                                class="w-48 sm:w-56 md:w-64 lg:w-72 h-48 sm:h-56 md:h-64 lg:h-72 rounded-full overflow-hidden border-4 border-white">
+                                <img src="aman.jpg" alt="Aman Kumar" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 bg-white rounded-lg p-3 sm:p-4 shadow-xl">
+                            <div class="text-center">
+                                <p class="text-xs sm:text-sm text-gray-600">Currently working at yoyo </p>
+                                <p class="font-bold text-blue-600 text-sm sm:text-base">Cloud Solutions Inc.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-16">About Me</h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">My Journey</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        With over 3 years of experience in DevOps and cloud infrastructure, I've worked on various
+                        projects ranging from small startups to enterprise applications. My passion lies in creating
+                        efficient, scalable cloud solutions that make a difference.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        I specialize in cloud technologies, containerization, infrastructure as code, and automation.
+                        When I'm not working on infrastructure, you can find me exploring new technologies,
+                        contributing to open source, or mentoring aspiring DevOps engineers.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600">18+</div>
+                            <div class="text-gray-600">Projects Completed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600">3+</div>
+                            <div class="text-gray-600">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600">12+</div>
+                            <div class="text-gray-600">Happy Clients</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600">8+</div>
+                            <div class="text-gray-600">Certifications</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">My Skills</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">AWS Cloud</span>
+                                <span class="text-blue-600 font-medium">92%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="skill-bar bg-blue-600 h-3 rounded-full" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">Kubernetes & Docker</span>
+                                <span class="text-blue-600 font-medium">88%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="skill-bar bg-blue-600 h-3 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">Linux Administration</span>
+                                <span class="text-blue-600 font-medium">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="skill-bar bg-blue-600 h-3 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">Terraform & Ansible</span>
+                                <span class="text-blue-600 font-medium">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="skill-bar bg-blue-600 h-3 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">Jenkins CI/CD</span>
+                                <span class="text-blue-600 font-medium">87%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="skill-bar bg-blue-600 h-3 rounded-full" style="width: 87%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">Git/GitHub</span>
+                                <span class="text-blue-600 font-medium">94%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="skill-bar bg-blue-600 h-3 rounded-full" style="width: 94%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">Grafana & Prometheus</span>
+                                <span class="text-blue-600 font-medium">83%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="skill-bar bg-blue-600 h-3 rounded-full" style="width: 83%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">Networking</span>
+                                <span class="text-blue-600 font-medium">86%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="skill-bar bg-blue-600 h-3 rounded-full" style="width: 86%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-4">My Projects</h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto">
+                Here are some of my recent projects that showcase my skills in DevOps and cloud infrastructure.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover project-card">
+                    <div class="overflow-hidden">
+                        <div class="w-full h-48 bg-blue-100 flex items-center justify-center">
+                            <i class="fas fa-cloud text-blue-400 text-6xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">AWS Cloud Infrastructure</h3>
+                        <p class="text-gray-600 mb-4">
+                            Designed and deployed scalable cloud infrastructure on AWS with auto-scaling groups and load
+                            balancers.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">AWS</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Terraform</span>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Ansible</span>
+                        </div>
+                        <a href="#" class="text-blue-600 font-semibold hover:text-blue-800 flex items-center">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover project-card">
+                    <div class="overflow-hidden">
+                        <div class="w-full h-48 bg-green-100 flex items-center justify-center">
+                            <i class="fab fa-docker text-green-400 text-6xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Kubernetes Cluster</h3>
+                        <p class="text-gray-600 mb-4">
+                            Built and managed production-grade Kubernetes cluster with monitoring and auto-scaling
+                            capabilities.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Kubernetes</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Docker</span>
+                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Prometheus</span>
+                        </div>
+                        <a href="#" class="text-blue-600 font-semibold hover:text-blue-800 flex items-center">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover project-card">
+                    <div class="overflow-hidden">
+                        <div class="w-full h-48 bg-purple-100 flex items-center justify-center">
+                            <i class="fas fa-code-branch text-purple-400 text-6xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">CI/CD Pipeline</h3>
+                        <p class="text-gray-600 mb-4">
+                            Implemented automated CI/CD pipeline using Jenkins, Docker, and GitHub Actions for seamless
+                            deployments.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Jenkins</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">GitHub
+                                Actions</span>
+                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Docker</span>
+                        </div>
+                        <a href="#" class="text-blue-600 font-semibold hover:text-blue-800 flex items-center">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#"
+                    class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center">
+                    View All Projects <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Friends Section -->
+    <section id="friends" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-4">My Friends & Collaborators</h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto">
+                Amazing people I've had the pleasure to work with on various projects and technical challenges.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Friend 1 -->
+                <div class="bg-gray-50 rounded-xl p-6 text-center friend-card">
+                    <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
+                        <img src="dikshaa.jpg" alt="Diksha Sharma" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Diksha Sharma</h3>
+                    <p class="text-blue-600 mb-3">Data Analytics Specialistt</p>
+                    <p class="text-gray-600 text-sm mb-4">
+                        Worked together on data pipeline projects. Excellent at data visualization and analytics.
+                    </p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="www.google.com" class="social-icon text-blue-600"><i class="fab fa-linkedin"></i></a>
+                        <a href="www.facebook.com" class="social-icon text-gray-600"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+
+                <!-- Friend 2 -->
+                <div class="bg-gray-50 rounded-xl p-6 text-center friend-card">
+                    <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
+                        <img src="neha.jpg" alt="Neha Gupta" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Neha Gupta</h3>
+                    <p class="text-blue-600 mb-3">Data Analytics Engineer</p>
+                    <p class="text-gray-600 text-sm mb-4">
+                        Collaborated on big data projects. Exceptional at data processing and machine learning.
+                    </p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="social-icon text-blue-600"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon text-gray-600"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+
+                <!-- Friend 3 -->
+                <div class="bg-gray-50 rounded-xl p-6 text-center friend-card">
+                    <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
+                        <img src="tabbu.jpg" alt="Tabassum Siddique" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Tabassum Siddique</h3>
+                    <p class="text-blue-600 mb-3">Data Analytics Expert</p>
+                    <p class="text-gray-600 text-sm mb-4">
+                        Partnered on analytics dashboards. Brilliant at statistical analysis and data storytelling.
+                    </p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="social-icon text-blue-600"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon text-gray-600"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+
+                <!-- Friend 4 -->
+                <div class="bg-gray-50 rounded-xl p-6 text-center friend-card">
+                    <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
+                        <img src="sidd.jpg" alt="Siddhant Dhama" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Siddhant Dhama</h3>
+                    <p class="text-blue-600 mb-3">Network Engineer</p>
+                    <p class="text-gray-600 text-sm mb-4">
+                        Worked on network infrastructure projects. Expert in routing, switching, and security.
+                    </p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="social-icon text-blue-600"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon text-gray-600"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+
+                <!-- Friend 5 -->
+                <div class="bg-gray-50 rounded-xl p-6 text-center friend-card">
+                    <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
+                        <img src="harsh.jpg" alt="Harshit Panchal" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Harshit Panchal</h3>
+                    <p class="text-blue-600 mb-3">Network Engineer</p>
+                    <p class="text-gray-600 text-sm mb-4">
+                        Collaborated on cloud networking projects. Skilled in VPNs, firewalls, and load balancers.
+                    </p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="social-icon text-blue-600"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon text-gray-600"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+
+                <!-- Friend 6 -->
+                <div class="bg-gray-50 rounded-xl p-6 text-center friend-card">
+                    <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
+                        <img src="rishab.jpg" alt="Rushabh Kumar" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Rushabh Kumar</h3>
+                    <p class="text-blue-600 mb-3">Software Engineer</p>
+                    <p class="text-gray-600 text-sm mb-4">
+                        Worked together on full-stack applications. Excellent problem solver and clean coder.
+                    </p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="social-icon text-blue-600"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon text-gray-600"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-4">Get In Touch</h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto">
+                Have a project in mind or want to collaborate? I'd love to hear from you!
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Contact Information</h3>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-blue-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-600">Email</p>
+                                <p class="font-semibold text-gray-800">aman@example.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-phone text-blue-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-600">Phone</p>
+                                <p class="font-semibold text-gray-800">+91 98765 43210</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-600">Location</p>
+                                <p class="font-semibold text-gray-800">Mumbai, India</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-4">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.linkedin.com/in/aman-kumar-106285309/"
+                                class="social-icon w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/aman00-dev"
+                                class="social-icon w-10 h-10 bg-gray-800 text-white rounded-full flex items-center justify-center">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#"
+                                class="social-icon w-10 h-10 bg-blue-400 text-white rounded-full flex items-center justify-center">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#"
+                                class="social-icon w-10 h-10 bg-red-600 text-white rounded-full flex items-center justify-center">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <form class="bg-white rounded-xl p-8 shadow-md">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                            <input type="text" id="name"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input type="email" id="email"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                            <textarea id="message" rows="5"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span class="text-white font-bold text-2xl">A</span>
+                </div>
+
+                <p class="text-xl font-semibold mb-4">Aman's Portfolio</p>
+                <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
+                    Passionate about creating amazing digital experiences and solving complex problems through code.
+                </p>
+
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="#" class="text-gray-400 hover:text-white social-icon">Home</a>
+                    <a href="#" class="text-gray-400 hover:text-white social-icon">About</a>
+                    <a href="#" class="text-gray-400 hover:text-white social-icon">Projects</a>
+                    <a href="#" class="text-gray-400 hover:text-white social-icon">Contact</a>
+                </div>
+
+                <p class="text-gray-400">&copy; 2024 Aman's Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Animate skill bars on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const skillBars = document.querySelectorAll('.skill-bar');
+                        skillBars.forEach(bar => {
+                            const width = bar.style.width;
+                            bar.style.width = '0';
+                            setTimeout(() => {
+                                bar.style.width = width;
+                            }, 100);
+                        });
+                        observer.disconnect();
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            observer.observe(document.querySelector('#about'));
+
+            // Form submission
+            const contactForm = document.querySelector('form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    alert('Thank you for your message! I will get back to you soon.');
+                    this.reset();
+                });
+            }
+        });
+        // Mobile menu toggle
+        const menuBtn = document.querySelector("nav button");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+
+    </script>
+</body>
+
+</html>
